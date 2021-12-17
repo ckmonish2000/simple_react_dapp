@@ -35,7 +35,6 @@ function App() {
       console.log("calling signer")
       const signer = provider.getSigner()
       const contract = new ethers.Contract(contract_address, Greeter.abi, signer)
-
       const transaction = await contract.setGreeting(value)
       console.log(transaction)
       await transaction.wait()
